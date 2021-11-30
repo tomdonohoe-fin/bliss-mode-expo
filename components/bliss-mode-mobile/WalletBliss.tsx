@@ -1,25 +1,21 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import { useWalletAccounts } from '../../hooks/useWalletAccounts';
+
+import { useWalletAccounts } from '../bliss-mode-core/hooks/useWalletAccounts';
+import { useWalletTicker } from '../bliss-mode-core/hooks/useWalletTicker';
+import { Currency } from '../bliss-mode-core/constants/currency';
 
 export default function WalletBliss() {
     const accountData = useWalletAccounts();
+    const ticker = useWalletTicker();
 
     const resAccount = accountData.accounts.accounts.find(
-        (acc) => acc.currency === 'TAUD',
+        (acc) => acc.currency === Currency.TAUD,
         );
 
-    const [seconds, setSeconds] = React.useState(464381);
-
-    React.useEffect(() => {
-        if (seconds > 0) {
-            setTimeout(() => setSeconds(seconds + 123), 200);
-        }
-    });
-
     return (
-        <View style={styles.animatedBlob}>
+        <View style={styles.container}>
             <View style={styles.details}>
                 <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" >
                     <Path
@@ -31,7 +27,7 @@ export default function WalletBliss() {
                     />
                 </Svg>
                 <Text style={styles.items}>Accruing earnings</Text>
-                <Text style={styles.bigNumbers}>${resAccount.balance.amount}<Text style={styles.animatedCounter}>{seconds}</Text></Text>
+                <Text style={styles.bigNumbers}>${resAccount.balance.amount}<Text style={styles.animatedCounter}>{ticker}</Text></Text>
                 <Text style={styles.items}>in TAUD</Text>
             </View>
         </View>
@@ -39,7 +35,7 @@ export default function WalletBliss() {
 }
 
 const styles = StyleSheet.create({
-    animatedBlob: {
+    container: {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',

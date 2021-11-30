@@ -1,22 +1,18 @@
 import * as React from 'react';
-import { useWalletAccounts } from '../hooks/useWalletAccounts';
 import Blob from './Blob';
+
+import { useWalletAccounts } from './bliss-mode-core/hooks/useWalletAccounts';
+import { useWalletTicker } from './bliss-mode-core/hooks/useWalletTicker';
+import { Currency } from './bliss-mode-core/constants/currency';
 
 export default function WebOnly() {
 
     const accountData = useWalletAccounts();
+    const ticker = useWalletTicker();
 
     const resAccount = accountData.accounts.accounts.find(
-        (acc) => acc.currency === 'TAUD',
+        (acc) => acc.currency === Currency.TAUD,
         );
-
-    const [seconds, setSeconds] = React.useState(464381);
-
-    React.useEffect(() => {
-        if (seconds > 0) {
-            setTimeout(() => setSeconds(seconds + 123), 200);
-        }
-    });
 
     return <Blob>
         <div>
@@ -30,7 +26,7 @@ export default function WebOnly() {
                 />
             </svg>
             <div style={items}>Accruing earnings</div>
-            <div style={bigNumbers}>${resAccount.balance.amount}<span style={animatedCounter}>{seconds}</span></div>
+            <div style={bigNumbers}>${resAccount.balance.amount}<span style={animatedCounter}>{ticker}</span></div>
             <div style={items}>in TAUD</div>
         </div>
     </Blob>
