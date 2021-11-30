@@ -1,5 +1,5 @@
 import * as React from 'react';
-import "../styles/blob.css";
+// import "../styles/blob.css";
 
 export default function Blob(props) {
   return (
