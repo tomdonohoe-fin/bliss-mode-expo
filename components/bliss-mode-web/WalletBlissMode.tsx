@@ -64,3 +64,7 @@ export const allBlissModes = (theme?: any): BlissModeOptions => ({
       ...BLISS_DEFAULTS[BlissMode.Empty],
     },
   });
+
+  export const WalletBlissMode = () => {
+      
+  }
