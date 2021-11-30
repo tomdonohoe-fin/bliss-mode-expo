@@ -1,5 +1,3 @@
-// import Sound from 'react-sound';
-
 import {
     BlissMode,
     BlissModeOptions,
@@ -13,8 +11,25 @@ import {
     DawnIcon,
  } from './WalletBlissIcons';
 
+const windSound = (): HTMLAudioElement =>{
+    const dawn = new Audio('../bliss-mode-core/sounds/wind.mp3');
+    dawn.loop = true;
+    return dawn;
+}
 
-const dawnSound = () =>{
+const greenSound = (): HTMLAudioElement =>{
+    const dawn = new Audio('../bliss-mode-core/sounds/green.mp3');
+    dawn.loop = true;
+    return dawn;
+}
+
+const duskSound = (): HTMLAudioElement => {
+    const dawn = new Audio('../bliss-mode-core/sounds/dusk.mp3');
+    dawn.loop = true;
+    return dawn;
+}
+
+const dawnSound = (): HTMLAudioElement => {
     const dawn = new Audio('../bliss-mode-core/sounds/dawn.mp3');
     dawn.loop = true;
     return dawn;
@@ -25,17 +40,17 @@ export const allBlissModes = (theme?: any): BlissModeOptions => ({
       icon: (color: string) => (
         <Earn width={32} height={32} tintColor={color || '#076C29'} />
       ),
-      audio: (shouldPlay: boolean) => shouldPlay ? dawnSound().play() : dawnSound().pause(),
+      audio: (shouldPlay: boolean) => shouldPlay ? greenSound().play() : greenSound().pause(),
       ...BLISS_DEFAULTS[BlissMode.LeafyGreen],
     },
     [BlissMode.SeaSpray]: {
       icon: (color: string) => <SeaSprayIcon tintColor={color || '#002336'} />,
-      audio: (shouldPlay: boolean) => shouldPlay ? dawnSound().play() : dawnSound().pause(),
+      audio: (shouldPlay: boolean) => shouldPlay ? windSound().play() : windSound().pause(),
       ...BLISS_DEFAULTS[BlissMode.SeaSpray],
     },
     [BlissMode.Dusk]: {
       icon: (color: string) => <DuskIcon tintColor={color || '#3C73C6'} />,
-      audio: (shouldPlay: boolean) => shouldPlay ? dawnSound().play() : dawnSound().pause(),
+      audio: (shouldPlay: boolean) => shouldPlay ? duskSound().play() : duskSound().pause(),
       ...BLISS_DEFAULTS[BlissMode.Dusk],
     },
     [BlissMode.Dawn]: {
