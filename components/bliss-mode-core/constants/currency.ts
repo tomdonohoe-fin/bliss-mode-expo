@@ -4,7 +4,3 @@ export enum Currency {
     TAUD = 'TAUD',
     AUD = 'AUD',
 }
-
-export enum FiatCurrency {
-    AUD = 'AUD',
-}
