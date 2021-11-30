@@ -6,6 +6,8 @@ import { useWalletAccounts } from '../bliss-mode-core/hooks/useWalletAccounts';
 import { useWalletTicker } from '../bliss-mode-core/hooks/useWalletTicker';
 import { Currency } from '../bliss-mode-core/constants/currency';
 
+import { theme } from '../bliss-mode-core/WalletBlissMode';
+
 export default function WalletBliss() {
     const accountData = useWalletAccounts();
     const ticker = useWalletTicker();
@@ -20,7 +22,7 @@ export default function WalletBliss() {
                 <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" >
                     <Path
                     d="M15 9L3.75 20.25M6 18C1.5 10.5 7.5 3 20.25 3.75 21 16.5 13.5 22.5 6 18z"
-                    stroke={'#00A861'}
+                    stroke={theme.colors.green}
                     strokeWidth={1.5}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -42,11 +44,11 @@ const styles = StyleSheet.create({
         height: 300,
         width: 300,
         borderRadius: 300 / 2,
-        backgroundColor: '#4AD876',
-        color: '#007B26',
+        backgroundColor: theme.colors.lightGreen,
+        color: theme.colors.darkGreen,
         padding: 0,
         textAlign: 'center',
-        fontFamily: 'sans-serif',
+        fontFamily: theme.fonts.fontFamily,
     },
     details: {
         justifyContent: 'center',
@@ -60,6 +62,6 @@ const styles = StyleSheet.create({
         padding: 10
     },
     animatedCounter: {
-        color: '#FFF'
+        color: theme.colors.white,
     }
 });
