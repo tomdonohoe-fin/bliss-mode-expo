@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text } from 'react-native';
-import { useWalletAccounts } from './bliss-mode-core/hooks/useWalletAccounts';
+import { useWalletAccounts } from '../hooks/useWalletAccounts';
 
 export default function MobileOnly() {
 
