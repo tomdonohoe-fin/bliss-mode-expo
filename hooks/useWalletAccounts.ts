@@ -13,7 +13,7 @@ export const useWalletAccounts = (): any => {
                  },
                  "balance":{
                     "__typename":"Money",
-                    "amount":"0.00",
+                    "amount":"19.12",
                     "currency":"TAUD"
                  },
                  "createdAt":"2021-11-29T02:29:15.567Z",
