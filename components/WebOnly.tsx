@@ -14,7 +14,7 @@ export default function WebOnly() {
 
     React.useEffect(() => {
         if (seconds > 0) {
-            setTimeout(() => setSeconds(seconds - 123), 200);
+            setTimeout(() => setSeconds(seconds + 123), 200);
         }
     });
 
