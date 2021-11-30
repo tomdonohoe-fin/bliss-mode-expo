@@ -8,6 +8,6 @@ export interface BlissIcon {
 
 export interface BlissIconSvg {
   tintColor?: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }
