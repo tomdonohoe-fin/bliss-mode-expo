@@ -1,8 +1,12 @@
 import * as React from 'react';
-import { Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { useWalletAccounts } from '../hooks/useWalletAccounts';
 
-export default function MobileOnly() {
+import { BlissIconSlider } from '../components/bliss-mode-mobile/WalletBlissIcon';
+import { BlissMode } from './bliss-mode-core/WalletBlissMode';
+
+export default function MobileOnly() {    
+    <BlissIconSlider blissMode={BlissMode.LeafyGreen} />
 
     const accountData = useWalletAccounts();
 
@@ -13,6 +17,11 @@ export default function MobileOnly() {
     console.log(resAccount.balance.amount);
     console.log(accountData);
 
-    return <Text>balance: {resAccount.balance.amount}</Text>
+    return (
+        <View>
+        <Text>balance: {resAccount.balance.amount}</Text>
+        <BlissIconSlider blissMode={BlissMode.LeafyGreen} />
+        </View>
+    )
 
 }
