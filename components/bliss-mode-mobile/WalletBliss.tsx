@@ -22,7 +22,7 @@ export default function WalletBliss() {
                 <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" >
                     <Path
                     d="M15 9L3.75 20.25M6 18C1.5 10.5 7.5 3 20.25 3.75 21 16.5 13.5 22.5 6 18z"
-                    stroke={theme.colors.green}
+                    stroke={theme.colors.color}
                     strokeWidth={1.5}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
         height: 300,
         width: 300,
         borderRadius: 300 / 2,
-        backgroundColor: theme.colors.lightGreen,
-        color: theme.colors.darkGreen,
+        backgroundColor: theme.colors.colorLight,
+        color: theme.colors.colorDark,
         padding: 0,
         textAlign: 'center',
         fontFamily: theme.fonts.fontFamily,
