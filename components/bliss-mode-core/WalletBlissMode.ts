@@ -1,9 +1,16 @@
 export const theme = {
   colors: {
     white: '#FFF',
-    lightGreen: '#4AD876',
-    green: '#00A861',
-    darkGreen: '#007B26',
+    // greens
+    colorLight: '#4AD876',
+    color: '#00A861',
+    colorDark: '#007B26',
+
+    // pinks
+    // colorLight: '#ff69b4',
+    // color: '#db7093',
+    // colorDark: '#ff1493',
+
   },
   fonts: {
     fontFamily: 'sans-serif',
